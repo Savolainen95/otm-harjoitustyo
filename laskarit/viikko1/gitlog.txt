@@ -1,0 +1,97 @@
+commit b335637ab93eb939b2579ffb46d5b3f9cf7b378f
+Author: DESKTOP-H8RK0CK\Savolainen <mikko.i.savolainen@gmail.com>
+Date:   Mon Mar 19 15:55:52 2018 +0200
+
+    poistettiin file1. nimettiin file2 --> file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 799185f7e74cd62b2d233c1730b29b64961b7be1
+Author: DESKTOP-H8RK0CK\Savolainen <mikko.i.savolainen@gmail.com>
+Date:   Mon Mar 19 15:48:19 2018 +0200
+
+    tehtiin kansio, ja lisättiin sinne filet(1-3)
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit bbcdbd96c3d26646c3968e12699d7a8e8d4e6291
+Author: DESKTOP-H8RK0CK\Savolainen <mikko.i.savolainen@gmail.com>
+Date:   Mon Mar 19 15:35:18 2018 +0200
+
+    Poistettiin ja lisättiin tiedostoissa eka.txt ja kolmas.txt
+
+ eka.txt    | 1 +
+ kolmas.txt | 4 +++-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+commit a98422c15c31183d3667f09b04975e160068cfb7
+Author: DESKTOP-H8RK0CK\Savolainen <mikko.i.savolainen@gmail.com>
+Date:   Mon Mar 19 15:31:41 2018 +0200
+
+    no message
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a68b7abaed7173fc531f60874b48bd0919e52d77
+Author: DESKTOP-H8RK0CK\Savolainen <mikko.i.savolainen@gmail.com>
+Date:   Mon Mar 19 15:30:45 2018 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 3 ---
+ 1 file changed, 3 deletions(-)
+
+commit 3fd1d2705e9e78d302e72c45e435436c39a9ccef
+Author: DESKTOP-H8RK0CK\Savolainen <mikko.i.savolainen@gmail.com>
+Date:   Mon Mar 19 15:28:30 2018 +0200
+
+    omaa harjoittelua
+
+ toinen.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 69ab6825e9ff9235893584b20a0fbd8891759545
+Author: savomikk <mikko.i.savolainen@gmail.com>
+Date:   Mon Mar 19 13:37:52 2018 +0200
+
+    Lisää muutokset committoitavaksi ja committoi
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit aa65d6521d34acabbeef1a05aa5dd43c27ea8a2f
+Author: savomikk <mikko.i.savolainen@gmail.com>
+Date:   Mon Mar 19 13:33:27 2018 +0200
+
+    Muuta tiedostojen toinen.txt ja kolmas.txt sisältöä ja commitoi 
+muutokset
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 1d1c454fe8de758a7386da48925c73ec35e415e1
+Author: savomikk <mikko.i.savolainen@gmail.com>
+Date:   Mon Mar 19 13:29:12 2018 +0200
+
+     muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 109c36b74f9a1e6ac87b4304514cef03f4946a11
+Author: savomikk <mikko.i.savolainen@gmail.com>
+Date:   Mon Mar 19 13:25:43 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
