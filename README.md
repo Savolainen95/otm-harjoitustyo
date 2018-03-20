@@ -11,4 +11,4 @@ Minulla on kurssista *suuret* odotukset.
 
 [komentorivi.txt](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-Viellä yksi muutos committavaksi.
+Viellä yksi muutos committavaksi. Ja viellä.
