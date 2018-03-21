@@ -25,7 +25,7 @@ public class Maksukortti {
         this.saldo = this.saldo - maara;
         return true;
     }
-
+    
     @Override
     public String toString() {
         int euroa = saldo/100;
