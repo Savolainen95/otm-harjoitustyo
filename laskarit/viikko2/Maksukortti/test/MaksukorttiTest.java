@@ -68,4 +68,6 @@ public class MaksukorttiTest {
         kortti.syoMaukkaasti();
         assertEquals("Kortilla on rahaa 0.0 euroa", kortti.toString());
     }
+    // syö maukkaasti komento on virheelinen. (sen if lauseessa on >, vaikka pitäisi olla >=)
+    // en tiedä onko tarkoituksellinen. Pitäisikö se itse korjata, vai jättää sellaiseksi.
 }
