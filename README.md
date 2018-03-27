@@ -1,5 +1,10 @@
 # **OTM-Harjoitustyö**
 
+## **Harjoitustyö**
+
+[Määrittelydokumentti](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
+
+
 ## **Tehtävät**
 
 ### **Viikko1**
