@@ -9,6 +9,6 @@ package Snake;
  *
  * @author Savolainen
  */
-public class Board {
+public class Game {
     
 }
