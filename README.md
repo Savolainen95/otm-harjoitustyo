@@ -4,6 +4,7 @@
 
 [Määrittelydokumentti](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
+[Työaikakirjanpito](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 ## **Tehtävät**
 
@@ -25,8 +26,6 @@ Harjoitelu *JUnit* testejä, ja *Jacoco* reportin käyttöä.
 JacocoReport Unicafe
 ![Image of Jacoco](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/laskarit/viikko2/UnicafeJacocoReport.png)
 
-Unicafe tiedostot
 [Unicafe](https://github.com/Savolainen95/otm-harjoitustyo/tree/master/laskarit/viikko2/Unicafe)
 
-Maksukortti
 [Maksukortti](https://github.com/Savolainen95/otm-harjoitustyo/tree/master/laskarit/viikko2/Maksukortti)
