@@ -64,14 +64,16 @@ public class Snake {
     }
 
     public boolean contact(Piece piece) {
-        if (pieces.stream().map(Piece::getX).anyMatch(i -> i == piece.getX()) && pieces.stream().map(Piece::getY).anyMatch(i -> i == piece.getY())) {
+        //  if (pieces.stream().map(Piece::getX).anyMatch(i -> i == piece.getX()) && pieces.stream().map(Piece::getY).anyMatch(i -> i == piece.getY())) {
+        if (pieces.get(pieces.size() - 1).getX() == piece.getX() && pieces.get(pieces.size() - 1).getY() == piece.getY()) {
             return true;
+
         } else {
             return false;
         }
     }
 
-    public boolean contactWithTail() {
+    public boolean contactWithTail(int x, int y) {
         boolean hit = false;
 
         for (int i = 0; i < pieces.size(); i++) {
@@ -79,6 +81,26 @@ public class Snake {
                 if (pieces.get(i).contact(pieces.get(j)) && i != j) {
                     hit = true;
                 }
+            }
+        }
+        for (int i = 0; i < x; i++) {
+            if (pieces.get(pieces.size() - 1).contact(new Piece(i, -1))) {
+                hit = true;
+            }
+        }
+        for (int i = 0; i < x; i++) {
+            if (pieces.get(pieces.size() - 1).contact(new Piece(i, y))) {
+                hit = true;
+            }
+        }
+        for (int i = 0; i < y; i++) {
+            if (pieces.get(pieces.size() - 1).contact(new Piece(-1, i))) {
+                hit = true;
+            }
+        }
+        for (int i = 0; i < y; i++) {
+            if (pieces.get(pieces.size() - 1).contact(new Piece(x, i))) {
+                hit = true;
             }
         }
 
