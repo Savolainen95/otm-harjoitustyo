@@ -61,7 +61,7 @@ public class Graphic extends Application {
                 draw.setFill(Color.RED);
                 Apple apple = game.getApple();
                 // draw.fillRect(apple.getX() * squareSize, apple.getY() * squareSize, squareSize, squareSize);
-                draw.fillRect(apple.getX() * squareSize, apple.getY() * squareSize, squareSize, squareSize);
+                draw.fillOval(apple.getX() * squareSize, apple.getY() * squareSize, squareSize, squareSize);
             }
         };
         AnimationTimer timer2 = new AnimationTimer() {
@@ -69,7 +69,7 @@ public class Graphic extends Application {
 
             @Override
             public void handle(long present) {
-                if (present - previous < 1_000_000_000 / 20) {
+                if (present - previous < 1_000_000_000 / 25) {
                     return;
                 }
                 previous = present;
