@@ -23,6 +23,9 @@ public class Game {
     public void setSnake(Snake snake) {
         this.snake = snake;
     }
+    public void newSnake() {
+        this.snake = new Snake(this.width/2, this.height/2, Direction.DOWN);;
+    }
 
     public Apple getApple() {
         return this.apple;
@@ -55,5 +58,7 @@ public class Game {
     public void growScore() {
         this.score++;
     }
-
+    public void setScore(Integer x) {
+        this.score = 0;
+    }
 }

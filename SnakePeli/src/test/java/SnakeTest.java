@@ -22,6 +22,12 @@ public class SnakeTest {
         assertEquals(snake.getDirection(), Direction.DOWN);
         snake.setDirection(Direction.UP);
         assertEquals(snake.getDirection(), Direction.UP);
+        snake.setDirection(Direction.LEFT);
+        assertEquals(snake.getDirection(), Direction.LEFT);
+        snake.setDirection(Direction.DOWN);
+        assertEquals(snake.getDirection(), Direction.DOWN);
+        snake.setDirection(Direction.RIGHT);
+        assertEquals(snake.getDirection(), Direction.RIGHT);
     }
     @Test
     public void snakeGrow() {
