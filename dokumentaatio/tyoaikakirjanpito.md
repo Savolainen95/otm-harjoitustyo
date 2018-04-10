@@ -1,2 +1,2 @@
 ## Työaikakirjapito
-### Pvm     Tunnit        Kuvaus
+### Pvm___Tunnit________Kuvaus
