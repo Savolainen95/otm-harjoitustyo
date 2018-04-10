@@ -1,2 +1,2 @@
 ## Työaikakirjapito
-### Päivä  Aika   Kuvaus
+### Pvm     Tunnit        Kuvaus
