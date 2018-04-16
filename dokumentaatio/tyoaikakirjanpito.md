@@ -8,3 +8,5 @@
 12.4     2h       Korjattiinn ongelma, missä käärme saattoi vastaanottaa komennon mennä kielettyyn suuntaan fraimien vaihdon aikana.
 
 14.4     2h       Suuniteltiin visualisointia lopulliselle loppunäytölle, ja scenejen vaihtoja.
+
+16.4     5h       Tehtiin luokkakaaviot. Paranneltiin testejä. Lisättiin checkstyle, ja korjattiin sen avulla koodia.
