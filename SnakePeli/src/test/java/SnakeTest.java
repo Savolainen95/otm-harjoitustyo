@@ -1,4 +1,5 @@
-import Snake.*;
+import snake.Snake;
+import snake.Direction;
 
 import org.junit.After;
 import org.junit.AfterClass;

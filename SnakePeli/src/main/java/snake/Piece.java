@@ -1,5 +1,5 @@
 
-package Snake;
+package snake;
 
 
 public class Piece {
@@ -18,11 +18,7 @@ public class Piece {
         return y;
     }
     public boolean contact(Piece piece) {
-        if(piece.getX() == this.x && piece.getY() == this.y) {
-            return true;
-        } else {
-            return false;
-        }
+        return piece.getX() == this.x && piece.getY() == this.y;
     }
     @Override
     public String toString() {

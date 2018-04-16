@@ -1,16 +1,15 @@
 package Graphic;
 
-import Snake.*;
+import snake.Direction;
+import snake.Apple;
+import snake.Game;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
+
 import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.nio.file.Paths;
-import javafx.*;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -18,7 +17,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
@@ -26,17 +24,13 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javax.imageio.ImageIO;
 
 public class Graphic extends Application {
 
@@ -91,7 +85,7 @@ public class Graphic extends Application {
 
             @Override
             public void handle(long present) {
-                if (present - previous < 1_000_000_000 / 50) {
+                if (present - previous < 1_000_000_000 / 15) {
                     return;
                 }
                 previous = present;
@@ -119,7 +113,7 @@ public class Graphic extends Application {
                     new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false));
             Background b = new Background(bgImg);
             startscreen.setBackground(b);
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             System.out.println("ERROR: " + e);
         }
 
@@ -181,14 +175,21 @@ public class Graphic extends Application {
         Scene endScene = new Scene(endscreen);
 
         gameScene.setOnKeyPressed((event) -> {
-            if (event.getCode().equals(KeyCode.UP)) {
-                game.getSnake().setDirection(Direction.UP);
-            } else if (event.getCode().equals(KeyCode.DOWN)) {
-                game.getSnake().setDirection(Direction.DOWN);
-            } else if (event.getCode().equals(KeyCode.RIGHT)) {
-                game.getSnake().setDirection(Direction.RIGHT);
-            } else if (event.getCode().equals(KeyCode.LEFT)) {
-                game.getSnake().setDirection(Direction.LEFT);
+            switch (event.getCode()) {
+                case UP:
+                    game.getSnake().setDirection(Direction.UP);
+                    break;
+                case DOWN:
+                    game.getSnake().setDirection(Direction.DOWN);
+                    break;
+                case RIGHT:
+                    game.getSnake().setDirection(Direction.RIGHT);
+                    break;
+                case LEFT:
+                    game.getSnake().setDirection(Direction.LEFT);
+                    break;
+                default:
+                    break;
             }
         });
 
@@ -218,26 +219,6 @@ public class Graphic extends Application {
 
     public static void main(String[] args) {
         launch(Graphic.class);
-
-//        Snake snake = new Snake(5, 5, Direction.RIGHT);
-//        System.out.println(snake.getPieces());
-//        snake.move();
-//        System.out.println(snake.getPieces());
-//        snake.move();
-//        System.out.println(snake.getPieces());
-//        snake.move();
-//        System.out.println(snake.getPieces());
-//        
-//        
-//        snake.grow();
-//        System.out.println(snake.getPieces());
-//        snake.grow();
-//        System.out.println(snake.getPieces());
-//        
-//        snake.setDirection(Direction.LEFT);
-//        System.out.println(snake.contactWithTail());
-//        snake.move();
-//        System.out.println(snake.contactWithTail());
     }
 
 }

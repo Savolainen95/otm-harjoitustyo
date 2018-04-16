@@ -1,4 +1,4 @@
-package Snake;
+package snake;
 
 import java.util.*;
 
@@ -27,14 +27,11 @@ public class Snake {
     public boolean wrongDirection(Direction direction) {
         if (this.direction.equals(Direction.UP) && direction.equals(Direction.DOWN)) {
             return false;
-        }
-        if (this.direction.equals(Direction.DOWN) && direction.equals(Direction.UP)) {
+        } else if (this.direction.equals(Direction.DOWN) && direction.equals(Direction.UP)) {
             return false;
-        }
-        if (this.direction.equals(Direction.LEFT) && direction.equals(Direction.RIGHT)) {
+        } else if (this.direction.equals(Direction.LEFT) && direction.equals(Direction.RIGHT)) {
             return false;
-        }
-        if (this.direction.equals(Direction.RIGHT) && direction.equals(Direction.LEFT)) {
+        } else if (this.direction.equals(Direction.RIGHT) && direction.equals(Direction.LEFT)) {
             return false;
         }
         return true;
@@ -51,7 +48,6 @@ public class Snake {
     public void move() {
         int startingX = pieces.get(pieces.size() - 1).getX();
         int startingY = pieces.get(pieces.size() - 1).getY();
-
         switch (this.direction) {
             case DOWN:
                 startingY++;
@@ -72,7 +68,6 @@ public class Snake {
         } else {
             pieces.remove(0);
         }
-
     }
 
     public void grow() {

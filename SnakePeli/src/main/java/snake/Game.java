@@ -1,9 +1,9 @@
-package Snake;
+package snake;
 
 public class Game {
 
-    private int height;
-    private int width;
+    private final int height;
+    private final int width;
     private Snake snake;
     private Apple apple;
     private int score = 0;
@@ -23,8 +23,10 @@ public class Game {
     public void setSnake(Snake snake) {
         this.snake = snake;
     }
+
+    @SuppressWarnings("empty-statement")
     public void newSnake() {
-        this.snake = new Snake(this.width/2, this.height/2, Direction.DOWN);;
+        this.snake = new Snake(this.width / 2, this.height / 2, Direction.DOWN);;
     }
 
     public Apple getApple() {
@@ -42,9 +44,9 @@ public class Game {
     public void update() {
 
         if (snake.contact(this.apple)) {
-            
+
             growScore();
-            
+
             this.apple = new Apple((int) ((width - 1) * Math.random()), (int) ((height - 1) * Math.random()));
             this.snake.grow();
         }
@@ -58,6 +60,7 @@ public class Game {
     public void growScore() {
         this.score++;
     }
+
     public void setScore(Integer x) {
         this.score = 0;
     }
