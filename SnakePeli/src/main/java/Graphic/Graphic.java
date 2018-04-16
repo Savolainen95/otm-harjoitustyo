@@ -42,6 +42,7 @@ public class Graphic extends Application {
 
     private Label score = new Label("Score: 0");
     static boolean valmis = false;
+
     @Override
     public void start(Stage window) throws Exception {
         int squareSize = 20;
@@ -49,8 +50,6 @@ public class Graphic extends Application {
 
         Canvas canvas = new Canvas(squareSize * squares, squareSize * squares);
         GraphicsContext draw = canvas.getGraphicsContext2D();
-        
-        
 
         //Canvas canvas2 = new Canvas(squareSize * squares, squareSize * squares);
         // C:\Users\Savolainen\otm-harjoitustyo\SnakePeli\src\main\java\Images\Snake.png
@@ -92,7 +91,7 @@ public class Graphic extends Application {
 
             @Override
             public void handle(long present) {
-                if (present - previous < 1_000_000_000 / 15) {
+                if (present - previous < 1_000_000_000 / 50) {
                     return;
                 }
                 previous = present;
@@ -102,16 +101,15 @@ public class Graphic extends Application {
                 if (game.end()) {
                     score.setText("FINAL SCORE: " + game.getScore());
                     stop();
-                    
+
                 }
             }
         };
 
         Pane startscreen = new Pane();
         startscreen.setPrefSize(600, 600);
-       // startscreen.setBackground(new Background(new BackgroundFill(Color.BLACK, null, new Insets(5))));
-        
-        
+        // startscreen.setBackground(new Background(new BackgroundFill(Color.BLACK, null, new Insets(5))));
+
         try {
             FileInputStream inputstream = new FileInputStream(Paths.get("Photos/Snake.png").toAbsolutePath().toString());
             Image image = new Image(inputstream);
@@ -122,77 +120,74 @@ public class Graphic extends Application {
             Background b = new Background(bgImg);
             startscreen.setBackground(b);
         } catch (Exception e) {
-            System.out.println("ERROR: "+e);
+            System.out.println("ERROR: " + e);
         }
-        
-        
+
 //        Text text = new Text();
 //        text.setText("SNAKE");
 //        text.setFont(Font.font("Verdana", 70));
 //        text.setFill(Color.GREENYELLOW);
-        
-        
         Button startGame = new Button("New Game");
         Button hg = new Button("High Score");
         startGame.setPrefSize(230, 120);
         hg.setPrefSize(230, 120);
-        
+
         VBox vertical = new VBox();
         vertical.setSpacing(10);
         vertical.setLayoutX(185);
         vertical.setLayoutY(240);
-      //  vertical.getChildren().add(text);
+        //  vertical.getChildren().add(text);
         vertical.getChildren().add(startGame);
         vertical.getChildren().add(hg);
-      
+
         startscreen.getChildren().add(vertical);
 
-        
         Button alku = new Button("New game");
         Label space = new Label("                   ");
         HBox horizontal = new HBox();
         horizontal.getChildren().addAll(score, space, alku);
-        
+
         BorderPane placement = new BorderPane();
         placement.setCenter(canvas);
         placement.setTop(horizontal);
         Scene gameScene = new Scene(placement);
 
-        
-        
         Pane endscreen = new Pane();
         endscreen.setPrefSize(600, 600);
         endscreen.setBackground(new Background(new BackgroundFill(Color.BLACK, null, new Insets(5))));
-        
+
         Text finale = new Text();
         finale.setText("Final score: " + game.getScore());
         finale.setFont(Font.font("Verdana", 70));
         finale.setFill(Color.GREENYELLOW);
-        
+
         Button newGame = new Button("New Game");
         newGame.setPrefSize(230, 120);
-        
+        Button highScore = new Button("High Score");
+        highScore.setPrefSize(230, 120);
+
         VBox finaleText = new VBox();
+        VBox finaleButtons = new VBox();
         finaleText.getChildren().add(finale);
-        finaleText.getChildren().add(newGame);
-        
-        
-        
-        
-        endscreen.getChildren().add(finaleText);
-        
-        
+
+        finaleButtons.setSpacing(10);
+        finaleButtons.getChildren().addAll(newGame, highScore);
+        finaleButtons.setLayoutX(185);
+        finaleButtons.setLayoutY(240);
+
+        endscreen.getChildren().addAll(finaleText, finaleButtons);
+
         Scene startScene = new Scene(startscreen);
         Scene endScene = new Scene(endscreen);
-        
+
         gameScene.setOnKeyPressed((event) -> {
-            if (event.getCode().equals(KeyCode.UP) && game.getSnake().getDirection() != Direction.DOWN) {
+            if (event.getCode().equals(KeyCode.UP)) {
                 game.getSnake().setDirection(Direction.UP);
-            } else if (event.getCode().equals(KeyCode.DOWN) && game.getSnake().getDirection() != Direction.UP) {
+            } else if (event.getCode().equals(KeyCode.DOWN)) {
                 game.getSnake().setDirection(Direction.DOWN);
-            } else if (event.getCode().equals(KeyCode.RIGHT) && game.getSnake().getDirection() != Direction.LEFT) {
+            } else if (event.getCode().equals(KeyCode.RIGHT)) {
                 game.getSnake().setDirection(Direction.RIGHT);
-            } else if (event.getCode().equals(KeyCode.LEFT) && game.getSnake().getDirection() != Direction.RIGHT) {
+            } else if (event.getCode().equals(KeyCode.LEFT)) {
                 game.getSnake().setDirection(Direction.LEFT);
             }
         });
@@ -216,7 +211,7 @@ public class Graphic extends Application {
             game.setScore(0);
             game.newSnake();
         });
-        
+
         window.show();
 
     }

@@ -20,18 +20,30 @@ public class SnakeTest {
     @Test
     public void changeDirection() {
         assertEquals(snake.getDirection(), Direction.DOWN);
-        snake.setDirection(Direction.UP);
-        assertEquals(snake.getDirection(), Direction.UP);
         snake.setDirection(Direction.LEFT);
         assertEquals(snake.getDirection(), Direction.LEFT);
         snake.setDirection(Direction.DOWN);
         assertEquals(snake.getDirection(), Direction.DOWN);
         snake.setDirection(Direction.RIGHT);
         assertEquals(snake.getDirection(), Direction.RIGHT);
+        snake.setDirection(Direction.UP);
+        assertEquals(snake.getDirection(), Direction.UP);
     }
     @Test
     public void snakeGrow() {
        assertEquals(snake.getLeght(), 1);
+        
+    }
+    @Test
+    public void snakeMove() {
+        Snake sake = new Snake(15,15, Direction.DOWN);
+        assertEquals(snake.getPieces().get(0).getY(), sake.getPieces().get(0).getY());
+        snake.move();
+        snake.move();
+        assertEquals(snake.getPieces().get(0).getY(), sake.getPieces().get(0).getY());
+        snake.move();
+        assertNotSame(snake.getPieces().get(0).getY(), sake.getPieces().get(0).getY());
+      //  assertNotSame(snake.getPieces(), sake.getPieces());
         
     }
 

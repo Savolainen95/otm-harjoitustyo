@@ -19,7 +19,25 @@ public class Snake {
     }
 
     public void setDirection(Direction direction) {
-        this.direction = direction;
+        if (wrongDirection(direction)) {
+            this.direction = direction;
+        }
+    }
+
+    public boolean wrongDirection(Direction direction) {
+        if (this.direction.equals(Direction.UP) && direction.equals(Direction.DOWN)) {
+            return false;
+        }
+        if (this.direction.equals(Direction.DOWN) && direction.equals(Direction.UP)) {
+            return false;
+        }
+        if (this.direction.equals(Direction.LEFT) && direction.equals(Direction.RIGHT)) {
+            return false;
+        }
+        if (this.direction.equals(Direction.RIGHT) && direction.equals(Direction.LEFT)) {
+            return false;
+        }
+        return true;
     }
 
     public int getLeght() {
