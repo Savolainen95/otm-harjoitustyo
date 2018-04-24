@@ -20,6 +20,19 @@ public class GameTest {
     }
     
     @Test
+    public void scoreTests() {
+        assertEquals(game.getScore(), 0);
+        game.growScore();
+        assertEquals(game.getScore(), 1);
+        game.setScore(10);
+        assertEquals(game.getScore(), 10);
+    }
+    @Test
+    public void updateTest() {
+        game.update();
+    }
+    
+    @Test
     public void testGetters() {
         Snake snake = game.getSnake();
         assertEquals(this.game.getScore(), 0);

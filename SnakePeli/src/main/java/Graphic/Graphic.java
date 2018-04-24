@@ -3,8 +3,6 @@ package Graphic;
 import snake.Direction;
 import snake.Apple;
 import snake.Game;
-
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.nio.file.Paths;

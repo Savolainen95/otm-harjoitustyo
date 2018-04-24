@@ -62,6 +62,6 @@ public class Game {
     }
 
     public void setScore(Integer x) {
-        this.score = 0;
+        this.score = x;
     }
 }
