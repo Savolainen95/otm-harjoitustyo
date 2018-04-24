@@ -20,7 +20,7 @@ Peli päättyy jos pelaaja ohjaa käärmeensä aitauksen seinään, tai törmä�
 #### Testaus ####
 Testit suoritetaan komennolla:
 
-mvn test
+*mvn test*
 
 Testikattavuusraportti luodaan komennolla:
 
