@@ -1,7 +1,7 @@
-## Luokkakaavio ##
+### Luokkakaavio ###
 ![Luokkakaavio SnakePeli](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/images/LuokkaKaavio.png)
 
-## Tärkeä metodi ##
+### Sekvenssikaavio oikealle kääntymisestä ###
 Peli on käynnissä, ja käärme on liikkumassa oletuksena alaspäin.
 Käyttäjä antaa syötteen "right". Tapahtuu seuraavaa.
 
