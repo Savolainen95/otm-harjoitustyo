@@ -24,7 +24,7 @@ Testit suoritetaan komennolla:
 
 Testikattavuusraportti luodaan komennolla:
 
-mvn test jacoco:report
+*mvn test jacoco:report*
 ####  Jarin generointi ####
 
 Komento "mvn package" generoi hakemistoon target suoritettavan jar-tiedoston Snakepeli-1.0-SNAPSHOT.jar
