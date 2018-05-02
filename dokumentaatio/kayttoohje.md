@@ -12,7 +12,7 @@ Ohjelma käynistetään komennolla
 ## Ohjelman aloitus ##
 Nappi *"New Game"* aloittaa uuden pelin.
 
-Nappi *"High Score"* avaa pisteiden top 10. (ei tällä hetkellä viellä käytössä).
+Nappi *"High Score"* avaa huippupiste ikkunan, missä on parhaat 10 tulosta (ei tällä hetkellä viellä käytössä).
 
 ![Aloitus näyttö](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/aloitus.png)
 
