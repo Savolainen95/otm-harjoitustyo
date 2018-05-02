@@ -1,11 +1,16 @@
 package Graphic;
 
+import db.HighScore;
+import db.Database;
 import snake.Direction;
 import snake.Apple;
 import snake.Game;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.nio.file.Paths;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -14,6 +19,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -34,6 +40,8 @@ public class Graphic extends Application {
 
     private Label score = new Label("Score: 0");
     static boolean valmis = false;
+    static Integer help;
+    
 
     @Override
     public void start(Stage window) throws Exception {
@@ -158,16 +166,27 @@ public class Graphic extends Application {
         Button highScore = new Button("High Score");
         highScore.setPrefSize(230, 120);
 
+        Text nameHere = new Text();
+        nameHere.setText("Name: ");
+        nameHere.setFill(Color.WHITE);
+        TextField textField = new TextField();
+        Button submit = new Button("Submit");
+
         VBox finaleText = new VBox();
+        HBox submits = new HBox();
         VBox finaleButtons = new VBox();
         finaleText.getChildren().add(finale);
 
+        submits.getChildren().addAll(nameHere, textField, submit);
+        submits.setLayoutX(185);
+        submits.setLayoutY(200);
+
         finaleButtons.setSpacing(10);
         finaleButtons.getChildren().addAll(newGame, highScore);
-        finaleButtons.setLayoutX(185);
+        finaleButtons.setLayoutX(190);
         finaleButtons.setLayoutY(240);
 
-        endscreen.getChildren().addAll(finaleText, finaleButtons);
+        endscreen.getChildren().addAll(finaleText, submits, finaleButtons);
 
         Scene startScene = new Scene(startscreen);
         Scene endScene = new Scene(endscreen);
@@ -206,9 +225,21 @@ public class Graphic extends Application {
         });
         alku.setOnAction(event -> {
             finale.setText("Final score: " + game.getScore());
+            help = game.getScore();
             window.setScene(endScene);
             game.setScore(0);
             game.newSnake();
+        });
+        submit.setOnAction(event -> {
+            if (textField.getText() != null) {
+                HighScore highscore = new HighScore(textField.getText(), help);
+                try {
+                    game.getScores().saveOrUpdate(highscore);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Graphic.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
         });
 
         window.show();
