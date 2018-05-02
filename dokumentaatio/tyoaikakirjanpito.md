@@ -10,4 +10,6 @@ Päivä | Aika | Mitä tein
 20.4 | 6h | Testikattavuudet ja checkstylet hoidettu hyvään kuntoon. Checkstyle antaa vain yhden virheen ja testikattavuus yli 80%
 23.4 | 3h | Tutkittiin viikon tehtäviä, ja tutustuttiin materiaaliin. Ja korjattiin sen avulla peliä.
 24.4 | 4h | Yritettiin löytää ratkaisua, miten jar tiedostoon saa aloitusnäytön taustakuvan mukaan. Ratkaisua ei viellä löytynyt.
-Total | 54h | Arvio käytetystä ajasta.
+30.4 | 5h | Luotiin viimeinkin databaset ja otettiin ne käyttöön. (ei kuitenkaan viellä näkyvissä pelaajalle)
+2.5 | 5h | Korjattiin database ongelmia, ja tehtiin java.docit metodeille.
+Total | 64h | Arvio käytetystä ajasta.
