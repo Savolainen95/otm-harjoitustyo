@@ -30,3 +30,14 @@ Tuloksen näkee vasemmasta ylä laidasta, mistä löytyy myös nappi, mistä pä
 
 ![havisit pelin](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/h%C3%A4vi%C3%B6.png)
 
+## Loppu näyttö ##
+Loppu näytössä voi aloittaa uuden pelin, tai mennä huippu pisteisiin, mistä näkee top 10.
+
+Tämän hetkisessä jar tiedostossa huippupisteet eivät ole kuitenkaan viellä käytettävissä.
+
+![loppu naytto](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/endscreen.png)
+
+## Tulevaa ##
+On olemassa huippupiste database, mitä sitten huippupiste ikkuna käyttää.
+
+Pelaaja voi pelin päätyttyä lisää nimensä, jolloinka hänen pisteensä tallentuu tietokantaan.
