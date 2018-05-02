@@ -18,5 +18,8 @@ Nappi *"High Score"* avaa pisteiden top 10. (ei tällä hetkellä viellä käyt�
 
 ## Pelaaminen ## 
 Käärmettä voi ohjailla nuolinäppäimillä.
+
 Tavoite on syödä omenoita, jolloinka pisteet kasvavat.
+
+![peli käynnissä](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/pelikaynnissa.png)
 
