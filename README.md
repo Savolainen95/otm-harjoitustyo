@@ -1,33 +1,37 @@
 # **OTM-Harjoitustyö**
 
 ## **Harjoitustyö**
+Tämä on ohjelmistotekniikan menetelmien harjoitustyö. Aiheena on Snake peli, jossa pelaaja liikuttaa matoa aidatussa tilassa. Pelaaja saa pisteitä, kun hän syö tilassa olevia omenoita. Kun pelaaja syö omenan, niin aitaukseen syntyy uusi omena ja käärmeen pituus kasvaa.
+Peli päättyy jos pelaaja ohjaa käärmeensä aitauksen seinään, tai törmää omaan häntäänsä.
+
 
 ### **Dokumentaatio**
 
 [Määrittelydokumentti](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
+[arkkitehtuuri.md](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 [Työaikakirjanpito](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
-## **Tehtävät**
+[release jar tiedostolle](https://github.com/Savolainen95/otm-harjoitustyo/releases/tag/Viikko5)
 
-### **Viikko1**
 
-Tänään on tehty kaikkea *jännää*.
-Minulla on kurssista *suuret* odotukset.
+#### Komentorivitoiminnot ###
+#### Testaus ####
+Testit suoritetaan komennolla:
 
-[gitlog.txt](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+*mvn test*
 
-[komentorivi.txt](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+Testikattavuusraportti luodaan komennolla:
 
-Viellä yksi muutos committavaksi. Ja viellä.
+*mvn test jacoco:report*
+####  Jarin generointi ####
 
-### **Viikko2**
+Komento "*mvn package*" generoi hakemistoon target suoritettavan jar-tiedoston Snakepeli-1.0-SNAPSHOT.jar
 
-Harjoitelu *JUnit* testejä, ja *Jacoco* reportin käyttöä.
+#### Checkstyle ####
+Tiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla:
 
-JacocoReport Unicafe
-![Image of Jacoco](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/laskarit/viikko2/UnicafeJacocoReport.png)
-
-[Unicafe](https://github.com/Savolainen95/otm-harjoitustyo/tree/master/laskarit/viikko2/Unicafe)
-
-[Maksukortti](https://github.com/Savolainen95/otm-harjoitustyo/tree/master/laskarit/viikko2/Maksukortti)
+*mvn jxr:jxr checkstyle:checkstyle*
+ 
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto target/site/checkstyle.html
