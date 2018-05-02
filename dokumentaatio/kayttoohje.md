@@ -23,3 +23,10 @@ Tavoite on syödä omenoita, jolloinka pisteet kasvavat.
 
 ![peli käynnissä](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/pelikaynnissa.png)
 
+## Pelin loppu ##
+Jos pelaaja osuu käärmeellään seinään tai omaan häntäänsä hän häviää pelin.
+
+Tuloksen näkee vasemmasta ylä laidasta, mistä löytyy myös nappi, mistä pääsee loppu näyttöön.
+
+![havisit pelin](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/h%C3%A4vi%C3%B6.png)
+
