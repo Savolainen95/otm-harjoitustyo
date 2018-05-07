@@ -1,5 +1,5 @@
 
-package snake;
+package snakepeli.domain;
 
 
 public enum Direction {

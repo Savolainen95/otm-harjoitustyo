@@ -1,4 +1,4 @@
-package db;
+package snakepeli.db;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -55,9 +55,6 @@ public class Database {
                 + "id integer PRIMARY KEY, "
                 + "player varchar(50), "
                 + "points integer);");
-        list.add("INSERT INTO HighScores (player, points) VALUES ('ComputerSnake1', 5);");
-        list.add("INSERT INTO HighScores (player, points) VALUES ('ComputerSnake2', 3);");
-
         return list;
     }
 }

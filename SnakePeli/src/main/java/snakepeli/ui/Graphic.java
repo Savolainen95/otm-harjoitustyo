@@ -1,18 +1,20 @@
-package Graphic;
+package snakepeli.ui;
 
-import db.HighScore;
-import db.Database;
-import snake.Direction;
-import snake.Apple;
-import snake.Game;
+import snakepeli.db.HighScore;
+import snakepeli.db.Database;
+import snakepeli.domain.Direction;
+import snakepeli.domain.Apple;
+import snakepeli.domain.Game;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -41,7 +43,8 @@ public class Graphic extends Application {
     private Label score = new Label("Score: 0");
     static boolean valmis = false;
     static Integer help;
-    
+    private String sb = "";
+    private List<HighScore> scoreList;
 
     @Override
     public void start(Stage window) throws Exception {
@@ -108,7 +111,6 @@ public class Graphic extends Application {
 
         Pane startscreen = new Pane();
         startscreen.setPrefSize(600, 600);
-        // startscreen.setBackground(new Background(new BackgroundFill(Color.BLACK, null, new Insets(5))));
 
         try {
             FileInputStream inputstream = new FileInputStream(Paths.get("Photos/Snake.png").toAbsolutePath().toString());
@@ -123,10 +125,6 @@ public class Graphic extends Application {
             System.out.println("ERROR: " + e);
         }
 
-//        Text text = new Text();
-//        text.setText("SNAKE");
-//        text.setFont(Font.font("Verdana", 70));
-//        text.setFill(Color.GREENYELLOW);
         Button startGame = new Button("New Game");
         Button hg = new Button("High Score");
         startGame.setPrefSize(230, 120);
@@ -150,16 +148,19 @@ public class Graphic extends Application {
         BorderPane placement = new BorderPane();
         placement.setCenter(canvas);
         placement.setTop(horizontal);
-        Scene gameScene = new Scene(placement);
 
         Pane endscreen = new Pane();
         endscreen.setPrefSize(600, 600);
         endscreen.setBackground(new Background(new BackgroundFill(Color.BLACK, null, new Insets(5))));
 
+        Pane highscorescreen = new Pane();
+        highscorescreen.setPrefSize(600, 600);
+        highscorescreen.setBackground(new Background(new BackgroundFill(Color.BLACK, null, new Insets(5))));
+
         Text finale = new Text();
         finale.setText("Final score: " + game.getScore());
         finale.setFont(Font.font("Verdana", 70));
-        finale.setFill(Color.GREENYELLOW);
+        finale.setFill(Color.WHITE);
 
         Button newGame = new Button("New Game");
         newGame.setPrefSize(230, 120);
@@ -188,6 +189,27 @@ public class Graphic extends Application {
 
         endscreen.getChildren().addAll(finaleText, submits, finaleButtons);
 
+        Label topScores = new Label(sb);
+        topScores.setTextFill(Color.WHITE);
+        topScores.setFont(Font.font("Verdana", 30));
+        Label texTop = new Label("TOP 10 Scores.");
+        texTop.setTextFill(Color.WHITE);
+        texTop.setFont(Font.font("Verdana", 70));
+        Button goBack = new Button("Main Menu");
+        goBack.setPrefSize(230, 80);
+        goBack.setLayoutX(190);
+        goBack.setLayoutY(500);
+
+        VBox scoreBox = new VBox();
+        scoreBox.getChildren().addAll(texTop, topScores);
+        scoreBox.setLayoutX(10);
+        scoreBox.setLayoutY(5);
+
+        highscorescreen.getChildren().add(scoreBox);
+        highscorescreen.getChildren().add(goBack);
+
+        Scene gameScene = new Scene(placement);
+        Scene highscoreScene = new Scene(highscorescreen);
         Scene startScene = new Scene(startscreen);
         Scene endScene = new Scene(endscreen);
 
@@ -217,11 +239,17 @@ public class Graphic extends Application {
             window.setScene(gameScene);
             timer.start();
             timer2.start();
+            if (submit.isDisable()) {
+                submit.setDisable(false);
+            }
         });
         newGame.setOnAction(even -> {
             window.setScene(gameScene);
             timer.start();
             timer2.start();
+            if (submit.isDisable()) {
+                submit.setDisable(false);
+            }
         });
         alku.setOnAction(event -> {
             finale.setText("Final score: " + game.getScore());
@@ -231,15 +259,59 @@ public class Graphic extends Application {
             game.newSnake();
         });
         submit.setOnAction(event -> {
-            if (textField.getText() != null) {
+            if (textField.getText().equals("CLOSE AND CLEAR")) {
+                try {
+                    game.getScores().dropTable();
+                    Platform.exit();
+                    System.exit(0);
+
+                } catch (SQLException ex) {
+                    Logger.getLogger(Graphic.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else if (!textField.getText().equals("")) {
                 HighScore highscore = new HighScore(textField.getText(), help);
                 try {
                     game.getScores().saveOrUpdate(highscore);
                 } catch (SQLException ex) {
                     Logger.getLogger(Graphic.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                submit.setDisable(true);
+                textField.clear();
             }
 
+        });
+        hg.setOnAction(event -> {
+            sb = "";
+            try {
+                scoreList = game.getScores().findTop();
+                for (int i = 0; i < scoreList.size(); i++) {
+
+                    sb += (i + 1 + ". " + scoreList.get(i).getPlayer() + "  ----  " + scoreList.get(i).getPoints() + " \n");
+                }
+                topScores.setText(sb);
+            } catch (SQLException ex) {
+                Logger.getLogger(Graphic.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            window.setScene(highscoreScene);
+        });
+
+        highScore.setOnAction(event -> {
+            sb = "";
+            try {
+                scoreList = game.getScores().findTop();
+                for (int i = 0; i < scoreList.size(); i++) {
+                    sb += (i + 1 + ". " + scoreList.get(i).getPlayer() + "  ----  " + scoreList.get(i).getPoints() + " \n");
+                }
+                topScores.setText(sb);
+            } catch (SQLException ex) {
+                Logger.getLogger(Graphic.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            window.setScene(highscoreScene);
+        });
+
+        goBack.setOnAction(event -> {
+
+            window.setScene(startScene);
         });
 
         window.show();

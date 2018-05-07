@@ -1,4 +1,6 @@
-import snake.Piece;
+package snakepeli.test;
+
+import snakepeli.domain.Piece;
 
 import org.junit.After;
 import org.junit.AfterClass;

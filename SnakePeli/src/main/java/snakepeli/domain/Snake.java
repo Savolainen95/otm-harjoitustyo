@@ -1,4 +1,4 @@
-package snake;
+package snakepeli.domain;
 
 import java.util.*;
 
@@ -6,6 +6,7 @@ public class Snake {
 
     private List<Piece> pieces = new ArrayList<>();
     private Direction direction;
+    private int legalDirection;
     private int grow;
 
     public Snake(int startingX, int startingY, Direction startingdirection) {
@@ -40,16 +41,35 @@ public class Snake {
      * @return true if given direction is viable to use, false otherwise.
      */
     public boolean wrongDirection(Direction direction) {
-        if (this.direction.equals(Direction.UP) && direction.equals(Direction.DOWN)) {
+        wrongDirectionCurrent();
+        if (this.legalDirection == 1 && direction.equals(Direction.DOWN)) {
             return false;
-        } else if (this.direction.equals(Direction.DOWN) && direction.equals(Direction.UP)) {
+        } else if (this.legalDirection == 2 && direction.equals(Direction.UP)) {
             return false;
-        } else if (this.direction.equals(Direction.LEFT) && direction.equals(Direction.RIGHT)) {
+        } else if (this.legalDirection == 3 && direction.equals(Direction.RIGHT)) {
             return false;
-        } else if (this.direction.equals(Direction.RIGHT) && direction.equals(Direction.LEFT)) {
+        } else if (this.legalDirection == 4 && direction.equals(Direction.LEFT)) {
             return false;
         }
         return true;
+    }
+    /**
+     * Get's the snakes real direction between frames.
+     * Prevents snake turning on itself. With wrongDirection();
+     */
+    public void wrongDirectionCurrent() {
+        if(this.pieces.get(pieces.size() - 1).getY() < this.pieces.get(pieces.size() - 2).getY()) {
+            this.legalDirection = 1;
+        }
+        if(this.pieces.get(pieces.size() - 1).getY() > this.pieces.get(pieces.size() - 2).getY()) {
+            this.legalDirection = 2;
+        }
+        if(this.pieces.get(pieces.size() - 1).getX() < this.pieces.get(pieces.size() - 2).getX()) {
+            this.legalDirection = 3;
+        }
+        if(this.pieces.get(pieces.size() - 1).getX() > this.pieces.get(pieces.size() - 2).getX()) {
+            this.legalDirection = 4;
+        }
     }
     /**
      * Method returns the size of pieces list.

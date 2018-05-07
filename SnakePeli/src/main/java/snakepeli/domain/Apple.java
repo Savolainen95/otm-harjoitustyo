@@ -1,5 +1,5 @@
 
-package snake;
+package snakepeli.domain;
 
 
 public class Apple extends Piece { 

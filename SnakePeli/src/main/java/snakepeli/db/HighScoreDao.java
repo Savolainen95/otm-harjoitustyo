@@ -1,4 +1,4 @@
-package db;
+package snakepeli.db;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -121,12 +121,47 @@ public class HighScoreDao implements Dao<HighScore, Integer> {
         connection.close();
         return scores;
     }
+    public List<HighScore> findTop() throws SQLException {
+        List<HighScore> scores = new ArrayList<>();
+        Connection connection = database.getConnection();
+        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM HighScores "
+                + "ORDER BY points DESC limit 10");
+        
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            HighScore highscore = new HighScore(rs.getString("player"), rs.getInt("points"));
+
+            scores.add(highscore);
+        }
+
+        stmt.close();
+        rs.close();
+
+        connection.close();
+        return scores;
+        
+    }
+    public HighScore dropTable() throws SQLException {
+        
+        Connection conn = database.getConnection();
+        PreparedStatement stmt = conn.prepareStatement("DROP TABLE HighScores");
+
+        stmt.executeUpdate();
+
+        stmt.close();
+        conn.close();
+
+        return new HighScore("DROPING", 13);
+    }
+    
     /**
      * Finds and returns highscore with spesific PRIMARY KEY.
      * @param key
      * @return highscore
      * @throws SQLException 
      */
+    
+    @Override
     public HighScore findOne(Integer key) throws SQLException {
 
         Connection conn = database.getConnection();

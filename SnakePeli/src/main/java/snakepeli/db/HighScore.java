@@ -1,5 +1,5 @@
 
-package db;
+package snakepeli.db;
 
 
 

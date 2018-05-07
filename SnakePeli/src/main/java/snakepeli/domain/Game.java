@@ -1,6 +1,7 @@
-package snake;
+package snakepeli.domain;
 
-import db.*;
+import snakepeli.db.HighScoreDao;
+import snakepeli.db.Database;
 
 public class Game {
 
@@ -68,6 +69,7 @@ public class Game {
         }
         this.snake.move();
     }
+    
 
     public int getScore() {
         return this.score;

@@ -45,7 +45,7 @@
                 <version>0.8.0</version>
                 <configuration>
                     <excludes>
-                        <exclude>Graphic/*</exclude>
+                        <exclude>snakepeli/ui/*</exclude>
                     </excludes>
                 </configuration>   
                 <executions>
