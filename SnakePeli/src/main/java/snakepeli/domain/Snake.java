@@ -58,16 +58,16 @@ public class Snake {
      * Prevents snake turning on itself. With wrongDirection();
      */
     public void wrongDirectionCurrent() {
-        if(this.pieces.get(pieces.size() - 1).getY() < this.pieces.get(pieces.size() - 2).getY()) {
+        if (this.pieces.get(pieces.size() - 1).getY() < this.pieces.get(pieces.size() - 2).getY()) {
             this.legalDirection = 1;
         }
-        if(this.pieces.get(pieces.size() - 1).getY() > this.pieces.get(pieces.size() - 2).getY()) {
+        if (this.pieces.get(pieces.size() - 1).getY() > this.pieces.get(pieces.size() - 2).getY()) {
             this.legalDirection = 2;
         }
-        if(this.pieces.get(pieces.size() - 1).getX() < this.pieces.get(pieces.size() - 2).getX()) {
+        if (this.pieces.get(pieces.size() - 1).getX() < this.pieces.get(pieces.size() - 2).getX()) {
             this.legalDirection = 3;
         }
-        if(this.pieces.get(pieces.size() - 1).getX() > this.pieces.get(pieces.size() - 2).getX()) {
+        if (this.pieces.get(pieces.size() - 1).getX() > this.pieces.get(pieces.size() - 2).getX()) {
             this.legalDirection = 4;
         }
     }

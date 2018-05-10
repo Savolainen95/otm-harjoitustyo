@@ -47,10 +47,6 @@ public class DatabaseTest {
     }
     
     
-    
-    
-    
-    
     @Test
     public void testDropTable() throws SQLException {
         HighScore help = this.highScoreDao.dropTable();
