@@ -20,18 +20,31 @@ Peli päättyy jos pelaaja ohjaa käärmeensä aitauksen seinään, tai törmä�
 #### Testaus ####
 Testit suoritetaan komennolla:
 
-*mvn test*
+`mvn test`
 
 Testikattavuusraportti luodaan komennolla:
 
-*mvn test jacoco:report*
+`mvn test jacoco:report`
+
+Kattavuus testejä voi tarkastella selaimella avaamalla tiedosto target/site/jacoco/index.html
+
 ####  Jarin generointi ####
 
-Komento "*mvn package*" generoi hakemistoon target suoritettavan jar-tiedoston Snakepeli-1.0-SNAPSHOT.jar
+`mvn package`
+
+generoi hakemistoon target suoritettavan jar-tiedoston Snakepeli-1.0-SNAPSHOT.jar
+
+#### JavaDoc ####
+
+JavaDoc generoidaan komennolla
+
+`mvn javadoc:javadoc`
+
+JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
 
 #### Checkstyle ####
 Tiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla:
 
-*mvn jxr:jxr checkstyle:checkstyle*
+`mvn jxr:jxr checkstyle:checkstyle`
  
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto target/site/checkstyle.html
