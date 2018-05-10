@@ -4,7 +4,7 @@ Ohjelma on rakennettu kolmeen kerrokseen ja on jaettu pakkauksiin snakepeli.ui, 
 
 snakepeli.ui käyttöliittymän, mikä on näkyvissä käyttäjälle.
 snakeplei.domain sisältää ohjelman sovelluslogiikan.
-snakepeli.dao sisältää tietokantoja vastaavan koodin.
+snakepeli.db sisältää tietokantoja vastaavan koodin.
 
 ### Käyttöliittymä ###
 
@@ -17,6 +17,38 @@ Käyttöliittymä sisältää neljä erillistä näkymää.
 
 Jokainen näkymä on toteutettu [Scene](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Scene.html) oliona, ja niistä voi olla vain yksi kerrallaan näkyvissä sijoitettuna [stageen](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html).
 Käyttöliittymä on rakennettu luokkaan [snakepeli.ui.Graphic.java](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/src/main/java/snakepeli/ui/Graphic.java)
+
+Käyttäjä voi liikkua näiden näkymien välillä. Liikkuminen onnistuu näkymiin sijoitetuilla napeilla, jotka on on nimetty sen mukaan mihin näkymään se vie.
+
+Käyttöliittymä on pyritty eristämään sovellus logiikasta. Joitan yksinkertaisia asioita on pitänyt kuitenkin suorittaa käyttöliittymässä, jotta maven ja JavaFX toimivat hyvin yhdessä. Käyttöliittymä kutsuu ja käyttää sovelluslogiikkaa suorittamaan peliä.
+
+### Sovelluslogiikka ###
+
+Snakepeli.domain koostuu viidestä eri luokasta.
+
+- Piece
+- Apple
+- Snake
+- Direction
+- Game
+
+Piece on rajapinta joka atribuutteina on vain X ja Y koordinaatit. Snake ja Apple implementoivat siis Piece luokkaa.
+Snake on siis vain yksittäinen pala, mutta sille lisätään muistiin muiden Snake palojen koordinaatit listaan pieces.
+Snake olio sisältää myös atribuutit grow ja Direction. Grow atribuutti kertoo, kuinka monta palasta snaken pitää pitää muistissa.
+Direction on enumi, joka kertoo käärmeelle, mihin suuntaan uusi snake pala syntyy vanhaan palaan nähden.
+
+Game luokka on on niin sanotusti ylläpitävä luokka. Se kutsuu muita luokkia ja niiden avulla suorittaa pelin. Game luokalla on myös yhteys tietokantaan, mihin se sitten tallettaa huipputuloksia.
+
+### Tietokanta ###
+
+snakepeli.db Tietokanta koostu seuraavista luokista.
+
+- Database
+- Dao
+- HighScoreDao
+- HighScore
+
+
 
 
 ### Luokkakaavio ###
