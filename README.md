@@ -19,6 +19,7 @@ Peli päättyy jos pelaaja ohjaa käärmeensä aitauksen seinään, tai törmä�
 ### Releaset ###
 
 [Viikko 5](https://github.com/Savolainen95/otm-harjoitustyo/releases)
+[Valmis Peli](https://github.com/Savolainen95/otm-harjoitustyo/releases/tag/viikko7)
 
 
 ### Komentorivitoiminnot ###
