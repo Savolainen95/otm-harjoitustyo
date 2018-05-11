@@ -1,5 +1,5 @@
 # Käyttoohje #
-Lataa tiedosto [Valmiin pelin release](https://github.com/Savolainen95/otm-harjoitustyo/releases)
+Lataa tiedostot SnakePeli.The.Game.jar ja Snake.png releasest [Release](https://github.com/Savolainen95/otm-harjoitustyo/releases)
 
 
 ## Konfigurointi ##
@@ -48,5 +48,4 @@ Ylläpitäjä voi tyhjentää tietokannan tässä ruudussa. Pisteiden tallentami
 Huippupiste näyttö näyttää parhaat kymmenen tulosta. Jos tuloksia on alle kymmenen, niin tulee näkyville kaikki tulokset.
 ![Huppupisteet](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/huippupisteet.png)
 
-## Tulevaa ##
 
