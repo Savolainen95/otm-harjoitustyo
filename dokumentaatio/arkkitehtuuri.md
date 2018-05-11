@@ -60,6 +60,8 @@ Käyttöliittymä on toteutettu JavaFx;n avulla. Huomasin koodia kirjoittaessani
 
 
 ### Luokkakaavio ###
+Database ei näkyvissä tässä kuvassa.
+Game luokka on kuitenkin ainoa, joka sitä kutsuu.
 ![Luokkakaavio SnakePeli](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/images/LuokkaKaavio.png)
 
 ### Sekvenssikaavioita ###
