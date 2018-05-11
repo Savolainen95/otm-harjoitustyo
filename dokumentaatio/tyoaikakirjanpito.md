@@ -12,4 +12,6 @@ Päivä | Aika | Mitä tein
 24.4 | 4h | Yritettiin löytää ratkaisua, miten jar tiedostoon saa aloitusnäytön taustakuvan mukaan. Ratkaisua ei viellä löytynyt.
 30.4 | 5h | Luotiin viimeinkin databaset ja otettiin ne käyttöön. (ei kuitenkaan viellä näkyvissä pelaajalle)
 2.5 | 5h | Korjattiin database ongelmia, ja tehtiin java.docit metodeille.
-Total | 64h | Arvio käytetystä ajasta.
+5-9.5 | 12h | Korjattiin aikaisemmin ilmennyt ongelma, missä käärme pystyi välillä tekemään täyskäännöksen itsensä päälle. Tehtiin funktio, mikä tarkista käärmeen suunnan sen sijaan, että katsotaan käärmeen sen hetkistä suunta atribuuttia. Sen lisäksi viimeisteltiin koodi toiminta kuntoon.
+11.5 | 4h | Valmisteltiin dokumentaatiot kuntoon ja luotiin lopullinen release. Prjoketi on nyt valmis
+Total | 80h | Arvio käytetystä ajasta.
