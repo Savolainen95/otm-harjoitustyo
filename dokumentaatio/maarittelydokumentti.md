@@ -1,7 +1,7 @@
 # Määrittelydokumentti
 
-Tarkoituksena on tehdä kaikille tuttu Snake peli. Pelaaja voi syödä omenoita, joka sitten kasvattaa käärmeen pituutta ja vaikeuttaa peliä.
-Pelaaja voi liikkua käärmeellä ylös, vasemmalle, oikealle ja alas. Jos pelaaaja osuu käärmeellään seinään tai omaan häntäänsä, niin peli päättyy. Peli mahdollistaa myös pisteiden laskun, jossa omenan arvo on 10 pistettä. Peli tallentaa pisteet tietokantaan, ja niistä voi katsoa top 10.
+Tarkoituksena on tehdä kaikille tuttu Snake peli. Pelaaja voi syödä omenoita, joka sitten kasvattaa käärmeen pituutta.
+Pelaaja voi liikkua käärmeellä ylös, vasemmalle, oikealle ja alas. Jos pelaaaja osuu käärmeellään seinään tai omaan häntäänsä, niin peli päättyy. Peli mahdollistaa myös pisteiden laskun, jossa omenasta saa aina yhden pisteen. Käyttäjän halutessa peli tallentaa pisteet tietokantaan, ja niistä voi katsoa top 10.
 
 ## Toiminallisuudet
 
@@ -12,8 +12,7 @@ Pelaaja voi liikkua käärmeellä ylös, vasemmalle, oikealle ja alas. Jos pelaa
 * Peliin voidaan lisätä lisää toiminnallisuuksia, jos jää aikaa. ( Vaikeusasteet jne. ).
 
 ### Ylläpitäjä
-* Ylläpitäjä voi muokata tilastoja. 
-* Ylläpitäjä voi muokata pelitasoa.
+*Ylläpitäjä voi tyhjentää tietokannan pelin loppu näkymässä syöttämällä "CLOSE AND CLEAR" tekstikenttään ja painamalla "Submit" nappia.
 
 ### Toimintaympäristön rajoitteet
 * Tietokanta tallentuu kovalevylle tietokantaan.
