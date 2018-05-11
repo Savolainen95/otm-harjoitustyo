@@ -64,7 +64,7 @@ Käyttöliittymä on toteutettu JavaFx;n avulla. Huomasin koodia kirjoittaessani
 
 ### Sekvenssikaavioita ###
 
-Pelin käynistäessä tapahtuu seuraavaa. Käyttäjä ei ole siis antanut mitään syötettä.
+Pelin käynistäessä tapahtuu seuraavaa.
 
 ![Käynistys](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/images/New%20Game%20sekvenssi.png)
 
