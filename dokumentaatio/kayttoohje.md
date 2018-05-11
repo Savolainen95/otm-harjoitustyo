@@ -35,7 +35,11 @@ Loppu näytössä voi aloittaa uuden pelin, tai mennä huippu pisteisiin, mistä
 
 Tämän hetkisessä jar tiedostossa huippupisteet eivät ole kuitenkaan viellä käytettävissä.
 
-![loppu naytto](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/endscreen.png)
+![loppu naytto](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/h%C3%A4vi%C3%B6%20ruutu.png)
+
+## Huippupisteet ##
+Huippupiste näyttö näyttää parhaat kymmenen tulosta. Jos tuloksia on alle kymmenen, niin tulee näkyville kaikki tulokset.
+![Huppupisteet](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/huippupisteet.png)
 
 ## Tulevaa ##
 On olemassa huippupiste database, mitä sitten huippupiste ikkuna käyttää.
