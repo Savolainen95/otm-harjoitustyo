@@ -15,7 +15,7 @@ Testit tarkistavat tallentuuko tiedot tietokantaan oikein, sekä onnistuuko tiet
 
 ### Testauskattavuus
 
-Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus on 94% ja haarautumakattavuus 96%
+Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus on 81% ja haarautumakattavuus 80%
 
 ![Testikattavuus](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/jacocoReport.png)
 
