@@ -62,7 +62,12 @@ Käyttöliittymä on toteutettu JavaFx;n avulla. Huomasin koodia kirjoittaessani
 ### Luokkakaavio ###
 ![Luokkakaavio SnakePeli](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/images/LuokkaKaavio.png)
 
-### Sekvenssikaavio oikealle kääntymisestä ###
+### Sekvenssikaavioita ###
+
+Pelin käynistäessä tapahtuu seuraavaa. Käyttäjä ei ole siis antanut mitään syötettä.
+
+![Käynistys](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/images/New%20Game%20sekvenssi.png)
+
 Peli on käynnissä, ja käärme on liikkumassa oletuksena alaspäin.
 Käyttäjä antaa syötteen "right". Tapahtuu seuraavaa.
 
