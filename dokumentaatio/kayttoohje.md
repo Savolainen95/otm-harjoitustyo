@@ -1,13 +1,18 @@
 # Käyttoohje #
-Lataa tiedosto [SnakePeli-1.0-SNAPSHOT.jar](https://github.com/Savolainen95/otm-harjoitustyo/releases)
+Lataa tiedosto [Valmiin pelin release](https://github.com/Savolainen95/otm-harjoitustyo/releases)
+
+
 ## Konfigurointi ##
-Ohjelma olettaa, että Snake.png on kansiossa Photos.
-Eli *SnakePeli-1.0-SNAPSHOT.jar* tiedoston kanssa samassa kansiossa pitää olla Photos/Snake.png.
+Ohjelma olettaa, että Snake.png on sijoitettu kansioon nimeltä "Photos". 
+Kansiota ei voinut lisätä issueen, niin kansio pitää luoda itse.
+Eli *SnakePeli.The.Game.jar* tiedoston kanssa samassa kansiossa pitää olla Kansio Photos, jonka sisällä kuva Snake.png.
+
+Pelin käynistäessä syntyy Tietokanta HighScore samaan repositioon jar tiedoston kanssa.
 
 ## Ohjelman käynnistäminen ##
 Ohjelma käynistetään komennolla
 
-*java -jar SnakePeli-1.0-SNAPSHOT.jar*
+*java -jar SnakePeli.The.Game.jar*
 
 ## Ohjelman aloitus ##
 Nappi *"New Game"* aloittaa uuden pelin.
@@ -31,9 +36,11 @@ Tuloksen näkee vasemmasta ylä laidasta, mistä löytyy myös nappi, mistä pä
 ![havisit pelin](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/h%C3%A4vi%C3%B6.png)
 
 ## Loppu näyttö ##
-Loppu näytössä voi aloittaa uuden pelin, tai mennä huippu pisteisiin, mistä näkee top 10.
 
-Tämän hetkisessä jar tiedostossa huippupisteet eivät ole kuitenkaan viellä käytettävissä.
+Pelaaja voi tallentaa tuloksensa kirjoittamalla nimensä tekstikenttään. Jos tulos oli tarpeeksi hyvä, niin pelaajan tulos on nähtävissä "HighScore" näkymässä.
+
+Ylläpitäjä voi tyhjentää tietokannan tässä ruudussa. Pisteiden tallentamisen sijaan ylläpitäjä voi kirjoittaa teksti kenttään "CLOSE AND CLEAR". Tämä antaa tietokannalle DROP TABLE komennon.
+
 
 ![loppu naytto](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/h%C3%A4vi%C3%B6%20ruutu.png)
 
@@ -42,6 +49,4 @@ Huippupiste näyttö näyttää parhaat kymmenen tulosta. Jos tuloksia on alle k
 ![Huppupisteet](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/SnakePeli/Photos/huippupisteet.png)
 
 ## Tulevaa ##
-On olemassa huippupiste database, mitä sitten huippupiste ikkuna käyttää.
 
-Pelaaja voi pelin päätyttyä lisää nimensä, jolloinka hänen pisteensä tallentuu tietokantaan.
