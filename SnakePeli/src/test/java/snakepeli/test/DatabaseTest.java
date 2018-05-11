@@ -1,10 +1,7 @@
 package snakepeli.test;
 
 import java.sql.SQLException;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import snakepeli.db.Database;
@@ -19,8 +16,7 @@ public class DatabaseTest {
     HighScore highScore;
     
     
-    public DatabaseTest() {
-    }
+    
     
     
     @Before
@@ -29,6 +25,16 @@ public class DatabaseTest {
         this.highScoreDao = new HighScoreDao(this.database);
         this.highScore = new HighScore("Test", 10);
         this.highScoreDao.saveOrUpdate(highScore);
+    }
+    
+    @Test
+    public void testHighScoreClassSetMethods() {
+        this.highScore.setId(5);
+        this.highScore.setPlayer("Test");
+        this.highScore.setPoints((Integer) 15);
+        assertEquals(this.highScore.getId(),(Integer) 5);
+        assertEquals(this.highScore.getPlayer(), "Test");
+        assertEquals(this.highScore.getPoints(), (Integer) 15);
     }
     
     @Test

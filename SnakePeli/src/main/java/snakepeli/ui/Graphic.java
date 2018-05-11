@@ -1,7 +1,6 @@
 package snakepeli.ui;
 
 import snakepeli.db.HighScore;
-import snakepeli.db.Database;
 import snakepeli.domain.Direction;
 import snakepeli.domain.Apple;
 import snakepeli.domain.Game;
@@ -54,10 +53,7 @@ public class Graphic extends Application {
         Canvas canvas = new Canvas(squareSize * squares, squareSize * squares);
         GraphicsContext draw = canvas.getGraphicsContext2D();
 
-        //Canvas canvas2 = new Canvas(squareSize * squares, squareSize * squares);
-        // C:\Users\Savolainen\otm-harjoitustyo\SnakePeli\src\main\java\Images\Snake.png
-//        Background b = new Background(bgImg);
-//        canvas2.setBackground(b);
+
         Game game = new Game(squares, squares);
 
         AnimationTimer timer = new AnimationTimer() {
@@ -126,7 +122,7 @@ public class Graphic extends Application {
         }
 
         Button startGame = new Button("New Game");
-        Button hg = new Button("High Score");
+        Button hg = new Button("HighScore");
         startGame.setPrefSize(230, 120);
         hg.setPrefSize(230, 120);
 
@@ -134,7 +130,6 @@ public class Graphic extends Application {
         vertical.setSpacing(10);
         vertical.setLayoutX(185);
         vertical.setLayoutY(240);
-        //  vertical.getChildren().add(text);
         vertical.getChildren().add(startGame);
         vertical.getChildren().add(hg);
 
@@ -164,7 +159,7 @@ public class Graphic extends Application {
 
         Button newGame = new Button("New Game");
         newGame.setPrefSize(230, 120);
-        Button highScore = new Button("High Score");
+        Button highScore = new Button("HighScore");
         highScore.setPrefSize(230, 120);
 
         Text nameHere = new Text();
