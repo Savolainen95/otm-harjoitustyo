@@ -48,6 +48,14 @@ snakepeli.db Tietokanta koostu seuraavista luokista.
 - HighScoreDao
 - HighScore
 
+Luokat yhdessä käyttävät databasea, joka sisältää huppupiste "olioita". Jos tietokantaa ei ole enestään olemassa, niin luokka Database luo uuden databasen, ja käyttää sitten sitä. Käyttäjän on mahdollista myös poistaa tietokanta. Tiedot jäävät siis lokaaliin muistiin erilliseen tiedostoon. HighScoreDao hyödyntää Databasen luomaa tietokantaa, ja luo sen avulla HighScore olioita. Tämä on tehty niin, että sovelluslogiikan on helpompi käyttää tietokantaa.
+
+
+### Rakenteeseen jäänneet heikkoudet ###
+
+Käyttöliittymä on koodattu kokonaan yhteen luokkaan Graphic. Sen olisi voinut jakaa useampaan luokkaan, jotta sen muokkaaminen ja korjaaminen olisi helpompaa. Graphic luokassa olevat oliot, kuten napit ja scenet olisi voinut nimetä hieman paremmin, koska tällä hetkellä on hieman vaikea seurata, mikä rakentuu ja missä vaiheessa.
+
+Käyttöliittymä on toteutettu JavaFx;n avulla. Huomasin koodia kirjoittaessani, että java.awt olisi sopinut mavenin kanssa paremmin.
 
 
 
