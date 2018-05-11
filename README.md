@@ -15,7 +15,6 @@ Peli päättyy jos pelaaja ohjaa käärmeensä aitauksen seinään, tai törmä�
 
 [Työaikakirjanpito](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
-[release jar tiedostolle](https://github.com/Savolainen95/otm-harjoitustyo/releases/tag/Viikko5)
 
 ### Releaset ###
 
