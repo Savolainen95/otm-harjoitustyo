@@ -9,7 +9,6 @@ Pelaaja voi liikkua käärmeellä ylös, vasemmalle, oikealle ja alas. Jos pelaa
 * Käyttäjä voi listätä tuloksensa tietokantaan.
 * Käyttäjä voi katsoa top 10 tulokset
 * Käyttäjä voi aloittaa halutessaan uuden pelin.
-* Peliin voidaan lisätä lisää toiminnallisuuksia, jos jää aikaa. ( Vaikeusasteet jne. ).
 
 ### Ylläpitäjä
 *Ylläpitäjä voi tyhjentää tietokannan pelin loppu näkymässä syöttämällä "CLOSE AND CLEAR" tekstikenttään ja painamalla "Submit" nappia.
