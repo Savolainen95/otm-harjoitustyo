@@ -13,6 +13,8 @@ Peli päättyy jos pelaaja ohjaa käärmeensä aitauksen seinään, tai törmä�
 
 [Arkkitehtuurikuvaus](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Testausdokumentaatio](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/Testidokumentti.md)
+
 [Työaikakirjanpito](https://github.com/Savolainen95/otm-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 
