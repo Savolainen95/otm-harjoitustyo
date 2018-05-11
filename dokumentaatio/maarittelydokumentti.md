@@ -16,3 +16,11 @@ Pelaaja voi liikkua käärmeellä ylös, vasemmalle, oikealle ja alas. Jos pelaa
 ### Toimintaympäristön rajoitteet
 * Tietokanta tallentuu kovalevylle tietokantaan.
 * Työ on maven projekti, joten se vaatii javan ja mavenin toimiakseen.
+
+## Kehitys ideoita
+
+* Peliin voisi rakentaa vaihtoehtoisia tasoja. Esim taso, missä on keskellä este.
+* Peliä voisi somistaa lisäämällä muihinkin näkymiin hienon taustakuvan.
+* Peliin voisi lisää musiikin.
+* Käyttöliittymän koodin voisi jakaa useampaan luokkaa.
+* Ylläpitäjälle enemmän tietokannan muokkaus mahdollisuuksia.
